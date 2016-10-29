@@ -1,4 +1,4 @@
-<?
+<?php
 
 require_once("requests.php");
 require_once("requests_stats.php");
@@ -10,7 +10,7 @@ if($action === "collectUsers") {
 } else if($action === "collectScores") {
 	$from = $_POST["from"];
 	$to = $_POST["to"];
-	$turnamentId = $_POST["turnamentId"];
+	$turnamentId = isset($_POST["turnamentId"]) ? $_POST["turnamentId"] : null;
 	echo collectScores($from, $to, $turnamentId);
 } else if($action === "collectRankingDates") {
   $withYears = isset($_POST["withYears"]) ? $_POST["withYears"] : true;
@@ -19,9 +19,9 @@ if($action === "collectUsers") {
 } else if($action === "collectTurnaments") {
 	echo collectTurnaments();
 } else if($action === "collectGames") {
-  $from = $_POST["from"];
-	$to = $_POST["to"];
-	$userId = $_POST["userId"];
+  $from = isset($_POST["from"]) ? $_POST["from"] : null;
+	$to = isset($_POST["to"]) ? $_POST["to"] : null;
+	$userId = isset($_POST["userId"]) ? $_POST["userId"] : null;
 	echo json_encode(collectGames($from, $to, $userId));
 } else if($action === "collectGame") {
   $gameId = $_POST["gameId"];
@@ -41,7 +41,7 @@ if($action === "collectUsers") {
 } else if($action === "signoff") {
 	signoff();
 } else if($action === "isAdmin") {
-	echo isAdmin($_SESSION["user_id"]);
+	echo isset($_SESSION["user_id"]) ? isAdmin($_SESSION["user_id"]) : 0;
 } else if($action === "collectStatsList") {
   echo collectStatsList();
 } else if($action === "getMyUserId") {

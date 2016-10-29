@@ -8,21 +8,19 @@ define("DECIMALS_SEP", ",");
 define("MIN_GAME_PLAYED", 5);
 define("STATS_RESULTS_LIMIT", 5);
 
-define("AVATAR_PATH_PREFIX", "path_to_avatars");
-define("AVATAR_PATH_SUFFIX", "/avatar.jpg");
+define("AVATAR_PATH_PREFIX", "../wp-content/uploads/ultimatemember/");
+define("AVATAR_PATH_SUFFIX", "/profile_photo-40.jpg");
 
 // DB
-define("DB_TYPE", "db_type");
-define("DB_HOST", "host");
-define("DB_NAME", "db_name");
-define("DB_CHARSET", "db_charset");
-define("DB_USERNAME", "db_username");
-define("DB_PASSWORD", "db_password");
+define("DB_TYPE", "mysql");
+define("DB_HOST", "127.0.0.1");
+define("DB_NAME", "breizhmamod1");
+define("DB_CHARSET", "utf8");
+define("DB_USERNAME", "root");
+define("DB_PASSWORD", "");
 
-define("TABLE_GAMES", "table_games");
-define("TABLE_SCORES", "table_scores");
-define("TABLE_TURNAMENT", "table_turnament");
-define("TABLE_USERS", "table_users");
-define("TABLE_ADMINS", "table_admins");
-
-
+define("TABLE_GAMES", "bmjc_games");
+define("TABLE_SCORES", "bmjc_scores");
+define("TABLE_TURNAMENT", "bmjc_turnaments");
+define("TABLE_USERS", "bmjc_users");
+define("TABLE_ADMINS", "bmjc_admins");

@@ -37,7 +37,7 @@ $(document).ready(function() {
   $("#table").show();
   $(".loadingImage").hide();
   $.ajax({
-    url     : "http://breizhmahjong.fr/bmjc/requests_controller.php",
+    url     : "requests_controller.php",
     type    : "POST",
     data    : {"action" : "collectStatsList"},
     success : function(result){

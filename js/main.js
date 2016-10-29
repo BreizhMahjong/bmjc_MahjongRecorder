@@ -1,4 +1,4 @@
-var SERVER_URL_PREFIX = "http://breizhmahjong.fr/bmjc/";
+var SERVER_URL_PREFIX = "/bmjc/";
 
 function loginEvent() {
 	

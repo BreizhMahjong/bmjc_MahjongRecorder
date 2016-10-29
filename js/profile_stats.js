@@ -67,7 +67,7 @@ function executeContentJs() {
   });
   
   $.ajax({
-      url     : "http://breizhmahjong.fr/bmjc/requests_controller.php",
+      url     : "requests_controller.php",
       type    : "POST",
       data    : {
         "action" : "collectRankingDates",

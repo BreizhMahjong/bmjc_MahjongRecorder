@@ -13,6 +13,10 @@ abstract class AbstractDao {
     
     try {
       $this->bdd = new PDO(DB_TYPE . ":host=" . DB_HOST . ";dbname=" . DB_NAME . ";charset=" . DB_CHARSET, DB_USERNAME, DB_PASSWORD);
+      $request = $this->bdd->prepare("SELECT * FROM bmjc_users");
+      $request->execute();
+      $result = $request->fetchAll(PDO::FETCH_ASSOC);
+      var_dump($result);
     }
     catch(Exception $e) {
       die('Erreur : '.$e->getMessage());
@@ -24,9 +28,12 @@ abstract class AbstractDao {
   
   protected function sqlRequest($sql, $params) {
      
+    var_dump($sql);
     $request = $this->bdd->prepare($sql);
     $request->execute($params);
-    return $request->fetchAll(PDO::FETCH_ASSOC);
+    $result = $request->fetchAll(PDO::FETCH_ASSOC);
+    var_dump($result);
+    return $result;
     
   }
   

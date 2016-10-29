@@ -57,17 +57,17 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="http://breizhmahjong.fr/">
+          <a class="navbar-brand" href="/bmjc">
             <img src="images/logo_render_small.png"/>
           </a>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
-            <li <?php if(!isset($_SESSION["user_id"])) { echo "class=\"disabled\""; }?> <? if($menu == "newgame") { echo "class=\"active\""; } ?>><a href="?menu=newgame">Nouvelle Partie</a></li>
-            <li <? if($menu == "ranking") { echo "class=\"active\""; } ?>><a href="?menu=ranking">Classements</a></li>
-            <li <? if($menu == "stats") { echo "class=\"active\""; } ?>><a href="?menu=stats">Statistiques</a></li>
-            <li <? if($menu == "historic") { echo "class=\"active\""; } ?>><a href="?menu=historic">Historique</a></li>
+            <li <?php if(!isset($_SESSION["user_id"])) { echo "class=\"disabled\""; }?> <?php if($menu == "newgame") { echo "class=\"active\""; } ?>><a href="?menu=newgame">Nouvelle Partie</a></li>
+            <li <?php if($menu == "ranking") { echo "class=\"active\""; } ?>><a href="?menu=ranking">Classements</a></li>
+            <li <?php if($menu == "stats") { echo "class=\"active\""; } ?>><a href="?menu=stats">Statistiques</a></li>
+            <li <?php if($menu == "historic") { echo "class=\"active\""; } ?>><a href="?menu=historic">Historique</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
 <?php
