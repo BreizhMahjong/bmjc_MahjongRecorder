@@ -36,6 +36,12 @@ body {
 	
 }
 
+.select2-dropdown {
+  
+  max-height: 200px;
+  
+}
+
 #newGameTable {
     
     margin-top: 5px;
