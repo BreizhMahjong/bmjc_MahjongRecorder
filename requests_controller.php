@@ -3,7 +3,6 @@
 require_once("requests.php");
 require_once("requests_stats.php");
 require_once("requests_profile.php");
-require_once("requests_utils.php");
 
 $action = $_POST["action"];
 if($action === "collectUsers") {
