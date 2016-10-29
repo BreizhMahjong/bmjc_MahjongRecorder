@@ -1,7 +1,6 @@
 <?php
 
 require_once("requests_utils.php");
-require_once("sql_statements.php");
 
 
 function collectIndividualScores($from, $to, $userId) {
@@ -39,7 +38,15 @@ ORDER BY game_date ASC, ID ASC";
   $result = array(
     "chart" => $chart->toFormattedChart(),
   );
-  return json_encode($result);
+  
+  /*
+  ini_set('xdebug.var_display_max_depth', -1);
+ini_set('xdebug.var_display_max_children', -1);
+ini_set('xdebug.var_display_max_data', -1);
+  var_dump($result);
+  */
+
+  return $result;
   
 }
 

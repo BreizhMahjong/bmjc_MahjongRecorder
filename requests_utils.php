@@ -18,7 +18,7 @@ session_start();
 
 $bdd = null;
 try {
-	$bdd = new PDO(DB_TYPE . ":host=" . DB_HOST . ";dbname=" . DB_NAME . ";charset=" . DB_CHARSET, DB_USERNAME, DB_PASSWORD);
+	$bdd = new PDO(DB_TYPE . ":host=" . DB_HOST . ";dbname=" . DB_NAME . ";charset=" . DB_CHARSET, DB_USERNAME, DB_PASSWORD, array(PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8'));
 }
 catch(Exception $e) {
 	die('Erreur : '.$e->getMessage());
@@ -362,7 +362,7 @@ function getAllSeasons($includeYearsSeasons, $includeAllCumulated) {
 /**
  * Logging d'un utilisateur
  * @param string loggin Le loggin de l'utilisateur
- * @pass string le mot de passe de l'utilisateur
+ * @param string pass le mot de passe de l'utilisateur
  * @return json Le résultat de la tentative de logging
  */
 function signon($login, $pass) {
@@ -408,7 +408,7 @@ function sqlDateToHumanDate($date) {
   
   $dateTime = DateTime::createFromFormat(SQL_DATE_FORMAT, $date);
   $humanDate = strftime(HUMAN_DATE_FORMAT, $dateTime->getTimestamp());
-  $humanDate = ucfirst($humanDate);
+  $humanDate = utf8_encode(ucfirst($humanDate));
   return $humanDate;
   //return $dateTime->format(HUMAN_DATE_FORMAT);
   

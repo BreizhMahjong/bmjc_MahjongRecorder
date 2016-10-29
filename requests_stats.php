@@ -1,7 +1,6 @@
 <?php
 
 require_once("requests_utils.php");
-require_once("sql_statements.php");
 
 
 function cmpSqlRes1($a, $b) {
